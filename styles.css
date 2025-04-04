@@ -18,7 +18,18 @@ body{
     border: 3px solid #333;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
+/* Initial hidden state */
+#main-header {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 0.8s ease-out;
+}
 
+/* When class is added, show it */
+#main-header.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
 header{
     background-color: #333;
     color: #fff;
@@ -89,16 +100,5 @@ section.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
-/* Initial hidden state */
-#main-header {
-    opacity: 0;
-    transform: translateY(-30px);
-    transition: all 0.8s ease-out;
-}
 
-/* When class is added, show it */
-#main-header.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
     
