@@ -89,16 +89,4 @@ section.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* Initial hidden state */
-#main-header {
-    opacity: 0;
-    transform: translateY(-30px);
-    transition: all 0.8s ease-out;
-}
-
-/* When class is added, show it */
-#main-header.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
+    
