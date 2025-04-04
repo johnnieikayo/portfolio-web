@@ -15,3 +15,8 @@ sections.forEach(section => {
     observer.observe(section);
 });
 
+window.addEventListener('load', () => {
+    const header = document.getElementById('main-header');
+    header.classList.add('animate');
+});
+
