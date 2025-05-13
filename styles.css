@@ -161,3 +161,27 @@ body.dark-mode section {
     cursor: pointer;
     z-index: 1000;
 }
+#typing-animation h1, #typing-animation p {
+  display: inline-block;
+  font-size: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: typing 4s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
