@@ -1,3 +1,4 @@
+/* Base Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +8,12 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Fixed this line */
+    background-color: #f4f4f4;
     color: #333;
     padding: 20px;
 }
 
+/* About Section Image */
 #about img {
     display: block;
     margin: 10px auto;
@@ -19,7 +21,7 @@ body {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Header animation */
+/* Header Animation */
 #main-header {
     opacity: 0;
     transform: translateY(-30px);
@@ -42,6 +44,7 @@ header h1 {
     margin: 0;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
@@ -56,43 +59,16 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #fff;
-    font-weight: bold; /* Fixed this line */
+    font-weight: bold;
 }
 
+/* Sections */
 section {
     margin: 40px 0;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Fixed this line */
-}
-
-h2 {
-    color: #333;
-}
-
-ul {
-    list-style: none;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    margin-top: 40px;
-}
-
-/* Responsive menu for smaller screens */
-@media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-}
-
-/* Section animation */
-section {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease-out;
@@ -103,37 +79,34 @@ section.fade-in {
     transform: translateY(0);
 }
 
-        observer.observe(section);
-    });
-});
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-/* DARK MODE STYLES */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+/* Headings */
+h2 {
+    color: #333;
 }
 
-header.dark-mode,
-footer.dark-mode {
-    background-color: #1e1e1e;
+/* Project List */
+ul {
+    list-style: none;
 }
 
-section.dark-mode {
-    background-color: #1e1e1e;
-    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 40px;
 }
 
-#dark-mode-toggle {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #555;
-    color: white;
-    border: none;
-    cursor: pointer;
+/* Responsive Nav */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 }
+
+/* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -161,27 +134,25 @@ body.dark-mode section {
     cursor: pointer;
     z-index: 1000;
 }
-#typing-animation h1, #typing-animation p {
-  display: inline-block;
-  font-size: 24px;
-  font-family: 'Courier New', Courier, monospace;
-  white-space: nowrap;
-  border-right: 3px solid #fff;
-  width: 0;
-  animation: typing 4s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
+
+/* Typing Animation */
+#typing-animation h1,
+#typing-animation p {
+    display: inline-block;
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    border-right: 3px solid #fff;
+    width: 0;
+    animation: typing 4s steps(40) 1s 1 normal both, blink 0.75s step-end infinite;
+    margin-bottom: 10px;
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+    50% { border-color: transparent; }
 }
