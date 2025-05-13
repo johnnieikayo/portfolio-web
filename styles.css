@@ -106,6 +106,30 @@ section.fade-in {
         observer.observe(section);
     });
 });
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode section {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+#darkModeToggle {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 
     
