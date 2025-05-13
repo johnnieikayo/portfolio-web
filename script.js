@@ -1,9 +1,6 @@
+// Animate header on load
 document.addEventListener('DOMContentLoaded', () => {
-    // Animate header on load
-    const header = document.getElementById('main-header');
-    if (header) {
-        header.classList.add('animate');
-    }
+    document.getElementById('main-header').classList.add('animate');
 
     // Animate sections on scroll
     const sections = document.querySelectorAll('section');
@@ -11,28 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target); // animate once
+                observer.unobserve(entry.target);
             }
         });
-    }, {
-        threshold: 0.1
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+});
+
+// Toggle dark mode
+document.getElementById("toggle-dark").addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    document.querySelector('header').classList.toggle('dark-mode');
+    document.querySelector('footer').classList.toggle('dark-mode');
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.toggle('dark-mode');
     });
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // Dark mode toggle button
-    const toggleDarkBtn = document.getElementById('toggle-dark');
-    if (toggleDarkBtn) {
-        toggleDarkBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            document.querySelector('header')?.classList.toggle('dark-mode');
-            document.querySelector('footer')?.classList.toggle('dark-mode');
-
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.toggle('dark-mode');
-            });
-        });
-    }
 });
