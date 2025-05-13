@@ -1,15 +1,17 @@
-// Animate header on load
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('main-header').classList.add('animate');
-    
-    // Animate sections when they enter the viewport
-    const sections = document.querySelectorAll('section');
+    // Animate header on load
+    const header = document.getElementById('main-header');
+    if (header) {
+        header.classList.add('animate');
+    }
 
+    // Animate sections on scroll
+    const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target); // only animate once
+                observer.unobserve(entry.target); // animate once
             }
         });
     }, {
@@ -19,25 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
-});
 
-// Toggle Dark Mode
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.getElementById('dark-mode-toggle');
+    // Dark mode toggle button
+    const toggleDarkBtn = document.getElementById('toggle-dark');
+    if (toggleDarkBtn) {
+        toggleDarkBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            document.querySelector('header')?.classList.toggle('dark-mode');
+            document.querySelector('footer')?.classList.toggle('dark-mode');
 
-    toggleButton.addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        document.querySelector('header').classList.toggle('dark-mode');
-        document.querySelector('footer').classList.toggle('dark-mode');
-
-        // Update all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.toggle('dark-mode');
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.toggle('dark-mode');
+            });
         });
-    });
-});
-
-// Toggle Dark Mode with alternate button
-document.getElementById("toggle-dark").addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
+    }
 });
