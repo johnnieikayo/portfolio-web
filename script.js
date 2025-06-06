@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Animate header
+  // Animate header fade-in (if needed)
   document.getElementById('main-header').classList.add('animate');
 
-  // Intersection Observer for sections
+  // Intersection Observer for sections fade-in
   const sections = document.querySelectorAll('section');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -24,4 +24,20 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
   });
+
+  // Typing animation for welcome text
+  const welcomeText = "Welcome to My Portfolio";
+  const welcomeElement = document.getElementById('welcome-text');
+  let index = 0;
+
+  function type() {
+    if (index < welcomeText.length) {
+      welcomeElement.textContent += welcomeText.charAt(index);
+      index++;
+      setTimeout(type, 120); // typing speed in ms
+    }
+  }
+
+  // Start typing effect
+  type();
 });
