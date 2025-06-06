@@ -3,61 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Masta Maestro Portfolio</title>
+  <title>John_Ikayo-Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <button id="toggle-dark">🌙 Toggle Dark Mode</button>
 
-  <header>
+  <header id="main-header">
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact Me</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- New welcome section with id for typing effect -->
+  <section id="welcome">
+    <h1 id="welcome-text"></h1>
+  </section>
+
   <main>
-
-    <section id="welcome">
-      <h1 id="welcome-text"></h1>
-    </section>
-
     <section id="about">
       <h2>About Me</h2>
-      <p>Write something about yourself here...</p>
+      <img src="profile.jpg" alt="Johnnie Ikayo" width="200" style="border-radius: 50%;" />
+      <p>Hi! I'm Johnnie Ikayo, a passionate IT student and creative digital designer.</p>
+      <p>
+        My digital design experience includes creating digital cards and posters like event fliers, church
+        functions, birthday posters, and invitation cards. I'm proficient in Photoshop, GIMP, Adobe Express, and
+        Photoroom.
+      </p>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <div class="project-list">
-        <img src="project1.jpg" alt="Project 1" />
-        <img src="project2.jpg" alt="Project 2" />
-        <!-- Add more projects as needed -->
+      <div class="project-cards">
+        <div class="project-card">
+          <img src="project1.png" alt="Project 1" />
+          <div class="project-info">
+            <h3>Project 1</h3>
+            <p>Short description of project 1. Highlight what makes it cool.</p>
+            <a href="#" class="project-link">View Project</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="project2.png" alt="Project 2" />
+          <div class="project-info">
+            <h3>Project 2</h3>
+            <p>Short description of project 2. Highlight the key features.</p>
+            <a href="#" class="project-link">View Project</a>
+          </div>
+        </div>
       </div>
     </section>
-
   </main>
 
+  <!-- Contact section separate and clear -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <form>
-      <label for="name">Name:</label><br />
-      <input type="text" id="name" name="name" required /><br />
-
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" required /><br />
-
-      <label for="message">Message:</label><br />
-      <textarea id="message" name="message" rows="4" required></textarea><br />
-
-      <button type="submit">Send</button>
-    </form>
+    <p>Email: <a href="mailto:ikayojohn4@gmail.com">ikayojohn4@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/254112892524" target="_blank">+254112892524</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Masta Maestro</p>
+    <p>&copy; 2025 John Ikayo. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
