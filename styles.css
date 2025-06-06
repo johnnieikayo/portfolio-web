@@ -42,13 +42,13 @@ header nav ul li a:hover {
 section {
   padding: 3em 1.5em;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 2em auto;
   background: white;
-  margin-bottom: 2em;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Welcome section */
 #welcome {
   background: #222;
   color: #f39c12;
@@ -60,27 +60,43 @@ section {
   min-height: 120px;
   border-radius: 8px;
   box-shadow: 0 0 15px #f39c12;
+  /* Center the text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Projects section */
-.project-list {
+.project-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
   justify-content: center;
 }
 
-.project-list img {
+.project-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 320px;
   width: 100%;
-  max-width: 280px; /* smaller size for responsiveness */
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
 }
 
-.project-list img:hover {
+.project-card:hover {
   transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Project info */
+.project-info {
+  padding: 1em;
 }
 
 /* Contact section separate style */
@@ -98,38 +114,25 @@ section {
   margin-bottom: 1em;
 }
 
-#contact form input,
-#contact form textarea {
-  width: 100%;
-  padding: 0.8em;
-  margin-bottom: 1em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1em;
-  font-family: inherit;
-  resize: vertical;
+#contact p {
+  font-size: 1.1em;
+  margin: 0.5em 0;
+  text-align: center;
 }
 
-#contact form button {
-  background-color: #f39c12;
-  border: none;
-  color: white;
-  padding: 0.9em 1.6em;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  display: block;
-  margin: 0 auto;
+#contact a {
+  color: #f39c12;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-#contact form button:hover {
-  background-color: #d17e0a;
+#contact a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive tweaks */
 @media (max-width: 600px) {
-  .project-list {
+  .project-cards {
     flex-direction: column;
     align-items: center;
   }
